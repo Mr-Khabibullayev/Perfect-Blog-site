@@ -1,12 +1,14 @@
 {% extends 'base.html' %}
 {% block title %} Bosh sahifa {% endblock title %}
 {% block content %}
-{% if user.is_authenticated %}
-{{ user.username }}!
-<p><a href="{% url 'logout' %}">Chiqib ketish</a></p>
-{% else %}
-<p>Saytga kirmagansiz</p>
-<a href="{% url 'login' %}">Kirish</a>
-<a href="{% url 'signup' %}">Royhatdan O'tish</a>
-{% endif %}
+<br>
+<div class="jumbotron">
+    <h1 class="display-4">Assalomu aleykum !</h1>
+    <p class="lead">Axrorbek Khabibullayevning shaxsiy blogiga xush kelibsiz.</p>
+    <hr class="my-4">
+    <p>Bu yerda siz dasturchilarga oid songi yangiliklardan xabardor bolib tura olasiz </p>
+    <p class="lead">
+        <a href="{% url 'article_list' %}" class="btn-primary btn btn-lg" role="button">Postlarni ko'rish</a>
+    </p>
+</div>
 {% endblock content %}
