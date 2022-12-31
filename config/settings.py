@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # tashqi app
     'crispy_forms',
+    'ckeditor',
+    'ckeditor_uploader',
     # men ozim yaratgan applar
     'accounts',
     'pages',
@@ -122,6 +124,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATIC_URL = 'static/'
+STATICFILES_DIRS = [str(BASE_DIR.joinpath('static'))]
+STATIC_ROOT = str(BASE_DIR.joinpath('staticfiles'))
+STATICFILES_STOAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
@@ -148,3 +153,14 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 # MEDIA
 MEDIA_URL = '/media/'
 MEDIA_ROOT = str(BASE_DIR.joinpath('media'))
+
+
+# CKEDITOR CONFIGS
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': 'Full',
+    },
+}
+
+CKEDITOR_UPLOAD_PATH = "uploads/"
+CKEDITOR_RESTRICT_BY_USER = True
